@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Video Downloader</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-size: 16px;
+      color: #555;
+    }
+
+    input {
+      padding: 10px;
+      margin: 10px 0;
+      width: 80%;
+      max-width: 400px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 12px 20px;
+      cursor: pointer;
+      background-color: #ff0000;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #cc0000;
+    }
+  </style>
+</head>
+<body>
+  <h1>YouTube Video Downloader</h1>
+  <label for="videoUrl">YouTube Video URL:</label>
+  <input type="text" id="videoUrl" placeholder="Enter YouTube Video URL">
+  <br>
+  <button onclick="downloadVideo()">Download Video</button>
+
+  <script>
+    function downloadVideo() {
+      const videoUrl = document.getElementById('videoUrl').value;
+
+      // Make a request to the server to initiate the download
+      window.location.href = `/download?url=${encodeURIComponent(videoUrl)}`;
+    }
+  </script>
+</body>
+</html>
